@@ -9,10 +9,10 @@ const url = "mongodb+srv://demo:demo@cluster0.xgbfl.mongodb.net/prcart?retryWrit
 
 app.use(express.json())
 app.use(cors())
-if (process.env.NODE_ENV=="production") {
+
     app.use(express.static("./Public/"))
     
-}
+
 mongoose.connect(url,()=>{console.log("db connected")})
 app.listen(PORT,()=>{
     console.log("server started at 4000");
